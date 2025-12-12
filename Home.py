@@ -22,9 +22,11 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### Project Workflow")
 st.sidebar.markdown(
     """
-     **1. Data Loading & Overview 📁:** Explore the structure and initial quality of the cleaned dataset.
-     **2. Exploratory Analysis 📊:** Gain crucial insights into seasonal and pollutant trends via interactive charts.
-     **3. Modeling & Prediction 🧠:** View the performance and features of the optimized Random Forest Regressor.
+1. **Data Loading & Overview 📁:** Explore the structure and initial quality of the cleaned dataset.
+
+2. **Exploratory Analysis 📊:** Gain crucial insights into seasonal and pollutant trends via interactive charts (Task 2).
+
+3. **Modeling & Prediction 🧠:** View the performance and features of the optimized Random Forest Regressor (Task 3).
     """
 )
 st.sidebar.markdown("---") 
