@@ -9,24 +9,27 @@ st.set_page_config(
     layout="wide"
 )
 
-#Add Custom Sidebar Content
 st.sidebar.header("About This App ℹ️")
 st.sidebar.markdown(
     """
     This application provides an **end-to-end analysis pipeline** for
     forecasting air quality in India (AQI). Use the navigation above
     to explore each stage of the analysis.
-
-    ---
-    **1. Data Loading & Overview:** Explore the cleaned dataset.
-    **2. Exploratory Analysis:** Gain insights through interactive charts (Task 2).
-    **3. Modeling & Prediction:** View the performance and features of the optimized Random Forest Regressor (Task 3).
     """
 )
 st.sidebar.markdown("---") 
 
+st.sidebar.markdown("### Project Workflow")
+st.sidebar.markdown(
+    """
+    * **1. Data Loading & Overview 📁:** Explore the structure and initial quality of the cleaned dataset.
+    * **2. Exploratory Analysis 📊:** Gain crucial insights into seasonal and pollutant trends via interactive charts (Task 2).
+    * **3. Modeling & Prediction 🧠:** View the performance and features of the optimized Random Forest Regressor (Task 3).
+    """
+)
+st.sidebar.markdown("---") 
 
-#Data Loading (Crucial for Streamlit caching)
+#Data Loading 
 @st.cache_data
 def load_data():
     """Loads and caches the cleaned dataset."""
@@ -38,7 +41,7 @@ def load_data():
         st.error("Error: 'air_quality_cleaned_merged.csv' not found. Please ensure it is in the same directory.")
         return pd.DataFrame()
 
-#Main Page Content
+#Main Page 
 st.title("1. Data Loading & Overview 📊")
 st.markdown("""
     Goal: Before we dive into analysis, let's get acquainted with the dataset.
@@ -74,4 +77,4 @@ if not df.empty:
     
     st.dataframe(missing_info[missing_info['Missing %'] > 0])
     st.markdown("---")
-    st.write("Interpretation: The dataset is clean and pre-processed (as per Task 2), showing minimal missing data.")
+    st.write("Interpretation: The dataset is clean and pre-processed, showing minimal missing data.")
